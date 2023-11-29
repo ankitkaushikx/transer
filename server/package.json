@@ -1,0 +1,34 @@
+{
+  "name": "transer-server",
+  "version": "1.0.0",
+  "description": "Server side for transer website ",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitkaushikx/transer.git"
+  },
+  "keywords": [
+    "transer",
+    "node",
+    "express"
+  ],
+  "author": "Ankit kaushik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitkaushikx/transer/issues"
+  },
+  "homepage": "https://github.com/ankitkaushikx/transer#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  }
+}
