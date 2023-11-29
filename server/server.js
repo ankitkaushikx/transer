@@ -4,6 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
+import router from "./routes/test.js";
 
 // app
 const app = express();
@@ -24,7 +25,8 @@ mongoose
 app.use(morgan("short"));
 app.use(cors({ origin: true, credentials: true }));
 
-// routes
+//routes
+app.use("/", router);
 
 // port
 const port = process.env.PORT || 5000;
