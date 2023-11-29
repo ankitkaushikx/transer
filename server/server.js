@@ -5,26 +5,18 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
 import router from "./routes/test.js";
+import connectDB from "./db.js";
 
 // app
 const app = express();
 
 // db
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@transercluster.wx8lrro.mongodb.net/transer?retryWrites=true&w=majority`;
-
-mongoose
-  .connect(uri)
-  .then(() => {
-    console.log("DATABASE CONNECTED");
-  })
-  .catch((err) => {
-    console.log("DB CONNECTION ERROR", err);
-  });
-
+connectDB();
 // middleware
+
 app.use(morgan("short"));
 app.use(cors({ origin: true, credentials: true }));
-
+app.use(express.json());
 //routes
 app.use("/", router);
 
