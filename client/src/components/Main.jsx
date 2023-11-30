@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LoginForm from "./forms/LoginForm";
 function Main() {
   const [data, setData] = useState("");
   useEffect(() => {
@@ -18,6 +19,7 @@ function Main() {
   return (
     <>
       <h1>{data}</h1>
+      <LoginForm />
     </>
   );
 }
