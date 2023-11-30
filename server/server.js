@@ -1,29 +1,43 @@
-// import modules
+//--------------------------------Import Modules-------------------------------------
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
-import router from "./routes/test.js";
+// -----------------------------Routes Import---------------------------------------
+import router from "./routes/index.js";
 import connectDB from "./db.js";
 
-// app
+//
+//--------------------------------App-----------------------------------------------
+
 const app = express();
 
-// db
+//
+//--------------------------------Database------------------------------------------
+
 connectDB();
-// middleware
+
+//
+//--------------------------------MiddleWare----------------------------------------
 
 app.use(morgan("short"));
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
-//routes
+
+//
+//--------------------------------Routes---------------------------------------------
+
 app.use("/", router);
 
-// port
+//
+//--------------------------------Ports----------------------------------------------
+
 const port = process.env.PORT || 5000;
 
-// listener
+//
+//--------------------------------Listner-------------------------------------
+
 const server = app.listen(port, () => {
   console.log("----------------------SERVER STARTED  SUCCESSFULLY AT: ", port);
 });
